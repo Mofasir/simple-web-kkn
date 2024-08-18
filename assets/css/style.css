@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: max-content;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: #0F1035;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    background-color: #ffffff;
+    justify-content: space-around;
+    color: #0F1035;
+    height: 70px;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+    transition: top 0.4s;
+}
+
+.navbar .logo img {
+    width: 200px;
+}
+
+.navbar ul {
+    padding-left: 0;
+    display: flex;
+    list-style: none;
+    width: 35%;
+    justify-content: space-between;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px 10px;
+    border-radius: 999px;
+    color: #0F1035;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.navbar ul li:hover a {
+    background-color: #0F1035;
+    color: #ffffff;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #0F1035;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: #0F1035;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: #0F1035;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+main {
+    margin-top: auto;
+    padding: 20px;
+    overflow: auto;
+    background-color: #7FC7D9;
+}
+
+main .main-content {
+    float: left;
+    width: 75%;
+    padding-top: 0;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(15, 16, 53, 0.733);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 65px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+aside {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+    position: sticky;
+    top: 0%;
+}
+
+img {
+    margin: auto;
+    width: 400px;
+}
+
+aside .card {
+    padding: 5px;
+    background-color: #365486;
+    color: #ffffff;
+}
+
+aside .card img {
+    width: 160px;
+}
+
+p, th, td {
+    font-weight: 500;
+}
+
+.about, 
+.villege,
+.program-1,
+.program-2,
+.program-3,
+.program-4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.description-1 h1, .description-1 h3 {
+    text-align: left;
+    line-height: 20px;
+}
+
+.description-1 p {
+    text-align: justify;
+    line-height: 20px;
+}
+
+.image-1 img {
+    margin: 10px 0;
+    margin-left: 20px;
+    min-width: 150px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.description-2 h1, .description-2 h3 {
+    text-align: right;
+    line-height: 20px;
+}
+
+.description-2 p {
+    text-align: justify;
+    line-height: 20px;
+}
+
+.image-2 img {
+    margin: 10px 0;
+    margin-right: 20px;
+    min-width: 150px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+table {
+    text-align: justify;
+}
+
+footer {
+    background-color: #365486;
+    text-align: center;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .navbar ul {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .navbar ul {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 1050px) { 
+    main {
+        display: block !important;
+    }
+
+    main .main-content {
+        width: 100%;
+    }
+    
+    main aside {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .about,
+    .program-1,
+    .program-3 {
+        flex-direction: column;
+    }
+
+    .villege,
+    .program-2,
+    .program-4 {
+        flex-direction: column-reverse;
+    }
+
+    .description-2 h1, .description-2 h3 {
+        text-align: left;
+    }
+
+    .image-1 img, .image-2 img {
+        margin: 10px 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    aside .card {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar ul {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .navbar ul {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 696px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 38%;
+        height: 50vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        background-color: #ffffff;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    .navbar ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
