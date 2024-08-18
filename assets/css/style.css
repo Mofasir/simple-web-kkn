@@ -21,6 +21,7 @@ body {
     display: flex;
     width: 100%;
     background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(15, 16, 53, 0.733);
     justify-content: space-around;
     color: #0F1035;
     height: 70px;
@@ -113,7 +114,7 @@ main {
     margin-top: auto;
     padding: 20px;
     overflow: auto;
-    background-color: #7FC7D9;
+    background-color: #ffffff;
 }
 
 main .main-content {
@@ -146,8 +147,8 @@ img {
 
 aside .card {
     padding: 5px;
-    background-color: #365486;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #0F1035;
 }
 
 aside .card img {
@@ -210,7 +211,7 @@ table {
 }
 
 footer {
-    background-color: #365486;
+    background-color: #0F1035;
     text-align: center;
     color: #ffffff;
 }
